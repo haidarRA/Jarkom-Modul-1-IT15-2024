@@ -130,60 +130,48 @@ Pertanyaan yang didapat adalah apa warna favorit pembuat challenge (nevarrawr)? 
 
 Gajah Terbang (Server Recon)
 1.	Untuk mencari DBMS yang digunakan, menggunakan keyword seperti sql untuk mencari database yang mungkin dapat ditemukan.
- 
+![image](https://github.com/user-attachments/assets/f97ffd4e-6675-41cc-964b-4cdfcff24ac8)
 Di sini, dapat dilihat ada protokol PGSQL, yang merupakan inisial dari PostgreSQL.
-
 2.	Menggunakan capture pada nomor 1, ada beberapa packet dengan informasi 65520 -> 6969 dan sebagainya yang artinya DBMS tersebut berjalan di port 6969.
-
 3.	Untuk mencari tahu sistem operasi yang berjalan, dapat melihat salah satu packet yang telah di-filter.
- 
- 
+![image](https://github.com/user-attachments/assets/822d83df-904d-4a97-81b8-329274a3ece1)
+![image](https://github.com/user-attachments/assets/d05450d2-1cb5-4ed2-873a-b1380f4d538e)
 Di sini, dapat dilihat bahwa sistem operasi yang digunakan adalah Debian.
-
 4.	Merujuk ke gambar sebelumnya, kredensial username DBMS yang digunakan adalah s1gm4.
-
 5.	Untuk mencari nama dari database yang digunakan, digunakan filter frame contains "s1gm4".
- 
+![image](https://github.com/user-attachments/assets/75e1967e-d577-431f-97af-c283429af882)
 Nama dari databasenya adalah sigmaskibidigyatrizzzz.
-
 6.	Merujuk pada gambar sebelumnya, ada 4 user, yaitu Jojo Hermawan, Kevin Anugerah, Siska Awikwok, dan Kunto Aji.
-
 7.	Untuk mencari user admin, dilihat lagi isi dari packet sebelumnya.
- 
+![image](https://github.com/user-attachments/assets/45d0c530-8cda-4d28-9478-2467d5f7d9e4)
 Di sini, ada query SQL SELECT * FROM users WHERE role = ‘admin’ dengan hasil querynya adalah Jojo Hermawan dengan email jojohermawan@gmail.com.
-
 8.	Jika dilihat gambar sebelumnya, password dari user Jojo Hermawan adalah c93ccd78b2076528346216b3b2f701e6 yang masih dalam bentuk hash MD5. Setelah dilakukan MD5 reverse, didapatkan passwordnya adalah admin1234.
+![image](https://github.com/user-attachments/assets/8da77c42-d9f5-44e6-89dd-3a18b6939c2a)
  
 
 Stegography
 1.	Untuk menghitung jumlah file yang dikirim, dapat menggunakan filter frame contains “png”.
- 
+![image](https://github.com/user-attachments/assets/da3a5750-72c7-491f-bfce-51bf0511277c)
 Dari packet yang telah di-filter, ada 13 file yang dikirim.
-
 2.	Untuk mencari file gambar yang memiliki pesan, dapat menggunakan program reversed.py.
- 
+![image](https://github.com/user-attachments/assets/c80e4102-7e61-4665-a913-1a712239b36a)
 Untuk mencari pesan tersembunyi dalam file, cukup mengganti “filename.extantion” menjadi path dari file yang ingin dicari pesan rahasianya.
- 
+![image](https://github.com/user-attachments/assets/6bb61e25-1377-4dad-8ae6-b2e59e9e5976)
 Untuk mencari pesannya urut sesuai dengan urutan file yang ada. Sehingga, file yang memiliki pesan adalah ATP, EH, dan KJK.
-
 3.	Untuk pesan - pesan yang didapat, ada nawalhap, nanamaek, dan rebis. Jika dibalik, maka kata - kata tersebut akan menjadi pahlawan, keamanan, dan siber yang jika digabung akan menghasilkan pesan pahlawan keamanan siber.
- 
+![image](https://github.com/user-attachments/assets/49067dfb-1c7f-45b7-b423-a0f71ae72669)
 
 Gajah Terbang (Attacker Recon)
 1.	Untuk mencari akun email dari penyerang, kita harus menganalisis query - query yang ada di packet yang sudah digunakan di challenge Gajah Terbang (Server Recon).
- 
+![image](https://github.com/user-attachments/assets/b44d06e3-c1a0-45c8-9128-f16961da297f)
 Di sini, dapat dilihat bahwa ada yang ingin memberikan akses admin ke user dengan ID 3 dan unband user ID 3. Artinya, akun email penyerang adalah kuntoajiisrillll@gmail.com.
-
 2.	Password yang digunakan penyerang adalah aa1cbddbb1667f7227bcfdb25772f85c yang jika menggunakan teknik MD5 reverse akan didapatkan password kissme.
-
 3.	Untuk melihat kapan akun penyerang di-ban, dapat melihat gambar sebelumnya.
- 
+![image](https://github.com/user-attachments/assets/220256d4-24e2-4963-8646-82137ec3a9f9)
 Dapat disimpulkan bahwa akun penyerang di-ban pada tanggal 2024-06-09 (format YYYY-MM-DD).
-
 4.	Untuk table yang dimodifikasi penyerang, dengan merujuk pada gambar sebelumnya, tabel yang diubah adalah tabel users dan banned_users.
-
 5.	Untuk daftar produk ada di tabel products.
- 
+![image](https://github.com/user-attachments/assets/d8b09a21-5737-4e07-905d-244e46083f0c)
 Di tabel products, terdapat beberapa produk, yaitu rokok, teh botol, telur, es krim, dan permen (urutan ID dari 1 sampai 5). Dan di tabel transaction, penyerang membeli barang dengan ID 1 dan 4 yang artinya penyerang membeli rokok dan es krim.
 
 6.	Dari tabel products, harga rokok adalah 18000 dan harga es krim adalah 6500. Jika dijumlahkan, total transaksi penyerang adalah 24500.

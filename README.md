@@ -20,7 +20,7 @@
 ![image](https://github.com/user-attachments/assets/5955dce7-28c7-4041-a499-0490f0179169)
 8.	Dan pertanyaan terakhir adalah string kita dapatkan di petunjuk sebelumnya dan kita akan mendapatkan flag tersebut JarkomIT{8uK4n_S4n1ty_b1a5A_WV7asIzALcxpBRSx8b4EHLkoWSu5Nhm6TvQaMHkW6ExMdrS1TzYiwIKK}
 
-Illegal Breakthrough:
+**Illegal Breakthrough:**
 1.	Untuk pertanyaan yang pertama siapa ip dari korban untuk mengetahuinya kita hanya perlu menganalisis dari wireshark “172.21.88.207” 
 ![image](https://github.com/user-attachments/assets/7beb25d2-3562-4729-9170-482cf69dce3c)
 2.	Pertanyaan kedua prot yang digunakan sebagai web server “1917” 
@@ -33,13 +33,13 @@ Illegal Breakthrough:
 ![image](https://github.com/user-attachments/assets/152f5537-658e-404d-a872-29fc3ac210ad)
 6.	Flag nya JarkomIT{d34th_fr0m_th3_sky_c0jXLj8m8kv60EsiSkDX9AEu6H1ShaRlkmZVjFW3u4ISVbCV2qlTWW1}
 
-Ftp Login:
+**Ftp Login:**
 1.	Username yang berhasil digunakan untuk login “sn34ky” 
 ![image](https://github.com/user-attachments/assets/b8df6f36-a16d-4a36-8391-c5405c631fa0)
 2.	Password yang berhasil digunakan untuk login “”sup3rsn1ff3r”
 3.	Flagnya JarkomIT{n0t_s0_s3cur3_ftp_0YF03fBoSAn1y72F2YDp404ZEL0oFoQLiXBdzjPJQ0iTkNSibiJXG1N}
 
-Packet Barrage:
+**Packet Barrage:**
 1.	Ini sama seperti soal yang ilegal breakthrough namun pertanyaan pertamanya apa ip dari attacker “172.21.80.1”
 2.	Pertanyaan kedua berapa total attempt dari bruteforce attacker “1917” 
 ![image](https://github.com/user-attachments/assets/c73ff422-614d-42de-b52a-28a0f09307c2)
@@ -49,7 +49,7 @@ Packet Barrage:
 ![image](https://github.com/user-attachments/assets/3198859b-b4a7-43ec-a5bd-3f6041e964fa)
 5.	Flagnya JarkomIT{th3_fly1ng_c1rcus_0f_w4r_2359oDRNDReqGnfW07k1S8sJ25Stvy1wtJls8fs1iqvjBExZNMehMACE}
 
-Surprise:
+**Surprise:**
 1.	Service apa yang digunakan ftp server tersebut “vsFTPd 3.0.3” 
 ![image](https://github.com/user-attachments/assets/127a6cce-4663-4e31-aa86-9fe68446f5bc)
 2.	Apa nama file yang dikirm oleh attacker “g0tcha.cpp” 
@@ -58,8 +58,7 @@ Surprise:
 ![image](https://github.com/user-attachments/assets/7f7fae7f-3dbe-41cc-86c0-0ca11d55abef)
 4.	Setelah itu kita mendapatkan flagnya
 
-Pegawai Negeri Sebelah:
-
+**Pegawai Negeri Sebelah:**
 1.	Pertama kita download dahulu file csv nya  
 ![image](https://github.com/user-attachments/assets/981fca5a-6669-4037-ab17-3cc037bdbba8)
 2.	Pertanyaan pertama siapa yang memiliki password berikut “nNnM%coQuF”? Vero Tampubolon 
@@ -71,26 +70,25 @@ Pegawai Negeri Sebelah:
 5.	Apa password di akhir list? RyxaJPv^yF
 6.	Setelah kita menjawab semua soal melalui file csv yang telah kita download kita akan mendapatkan flagnya
 
-EZ:
+**EZ:**
 1.	Temukan jawaban dari log tersebut? jawabannya jawaban 
 ![image](https://github.com/user-attachments/assets/5012a8a6-7ede-445e-877b-c1fe24c6e876)
 2.	Port berapa yang digunakan service tersebut? 1234 
 ![image](https://github.com/user-attachments/assets/f2792235-7d2a-4ec1-9a92-643acc737cef)
 3.	Setelah itu kita dapat flagnya
 
-Rizzset:
+**Rizzset:**
 1.	 ![image](https://github.com/user-attachments/assets/bf006e65-ebd9-4dc6-abdb-aed1b12cfef4)
 2.	 ![image](https://github.com/user-attachments/assets/8aa6e645-ebcf-4c8a-ace8-04c88c73794c)
 3.	 ![image](https://github.com/user-attachments/assets/31b5817a-aa2c-48b6-9a93-4cc91761417a)
 4.	 ![image](https://github.com/user-attachments/assets/623ffa98-60bb-4397-9a90-6bacf575d6c5)
 
-Corporate Breach:
+**Corporate Breach:**
 1.	Untuk yang pertama, harus mencari nama dari attacker. Di sini, digunakan filter frame contains “name” untuk mencari tahu nama dari attacker.
 ![image](https://github.com/user-attachments/assets/39ed21f7-e76a-4fad-a314-a59bb906c8db)
 Setelah menggunakan filter, ada satu packet yang beda dari yang lain. Untuk mencari tahu isinya, menggunakan Follow -> HTTP Stream.
 ![image](https://github.com/user-attachments/assets/455dbb4e-e4e4-44b1-8f61-21e39e2371fc)
 Nama dari attacker adalah Nakhimov.
-
 2.	Untuk mencari email yang digunakan attacker untuk login, maka digunakan filter http.
 ![image](https://github.com/user-attachments/assets/6c1d796c-51e1-430d-96f9-e17aa527eb2a)
 ![image](https://github.com/user-attachments/assets/32278d94-5b07-43ee-9f2f-a26546ff9c45)
@@ -104,7 +102,7 @@ Email yang digunakan penyerang adalah jarkomsupport@gmail.com.
 ![image](https://github.com/user-attachments/assets/2824dca6-09e2-401f-8b1c-220e4547ca65)
 
 
-Malicious Code
+**Malicious Code**
 1.	Untuk mencari banyak attempt dir listing yang dilakukan oleh attacker, digunakan filter frame contains “GET”.
 ![image](https://github.com/user-attachments/assets/aed3aeff-db48-41a7-9574-cbb0f9292cf1)
 ![image](https://github.com/user-attachments/assets/4142e890-0c20-4b32-a568-63d77070ae45)
@@ -128,7 +126,7 @@ Jika di-decode, didapatkan pertanyaan berikut.
 Pertanyaan yang didapat adalah apa warna favorit pembuat challenge (nevarrawr)? dengan hint sweater. Karena Mas Aji suka memakai sweater merah, maka jawabannya adalah merah.
 ![image](https://github.com/user-attachments/assets/4032dbf6-0273-4326-9532-ef5e1ed2c115)
 
-Gajah Terbang (Server Recon)
+**Gajah Terbang (Server Recon)**
 1.	Untuk mencari DBMS yang digunakan, menggunakan keyword seperti sql untuk mencari database yang mungkin dapat ditemukan.
 ![image](https://github.com/user-attachments/assets/f97ffd4e-6675-41cc-964b-4cdfcff24ac8)
 Di sini, dapat dilihat ada protokol PGSQL, yang merupakan inisial dari PostgreSQL.
@@ -149,7 +147,7 @@ Di sini, ada query SQL SELECT * FROM users WHERE role = ‘admin’ dengan hasil
 ![image](https://github.com/user-attachments/assets/8da77c42-d9f5-44e6-89dd-3a18b6939c2a)
  
 
-Stegography
+**Stegography**
 1.	Untuk menghitung jumlah file yang dikirim, dapat menggunakan filter frame contains “png”.
 ![image](https://github.com/user-attachments/assets/da3a5750-72c7-491f-bfce-51bf0511277c)
 Dari packet yang telah di-filter, ada 13 file yang dikirim.
@@ -161,7 +159,7 @@ Untuk mencari pesannya urut sesuai dengan urutan file yang ada. Sehingga, file y
 3.	Untuk pesan - pesan yang didapat, ada nawalhap, nanamaek, dan rebis. Jika dibalik, maka kata - kata tersebut akan menjadi pahlawan, keamanan, dan siber yang jika digabung akan menghasilkan pesan pahlawan keamanan siber.
 ![image](https://github.com/user-attachments/assets/49067dfb-1c7f-45b7-b423-a0f71ae72669)
 
-Gajah Terbang (Attacker Recon)
+**Gajah Terbang (Attacker Recon)**
 1.	Untuk mencari akun email dari penyerang, kita harus menganalisis query - query yang ada di packet yang sudah digunakan di challenge Gajah Terbang (Server Recon).
 ![image](https://github.com/user-attachments/assets/b44d06e3-c1a0-45c8-9128-f16961da297f)
 Di sini, dapat dilihat bahwa ada yang ingin memberikan akses admin ke user dengan ID 3 dan unband user ID 3. Artinya, akun email penyerang adalah kuntoajiisrillll@gmail.com.
@@ -173,6 +171,5 @@ Dapat disimpulkan bahwa akun penyerang di-ban pada tanggal 2024-06-09 (format YY
 5.	Untuk daftar produk ada di tabel products.
 ![image](https://github.com/user-attachments/assets/d8b09a21-5737-4e07-905d-244e46083f0c)
 Di tabel products, terdapat beberapa produk, yaitu rokok, teh botol, telur, es krim, dan permen (urutan ID dari 1 sampai 5). Dan di tabel transaction, penyerang membeli barang dengan ID 1 dan 4 yang artinya penyerang membeli rokok dan es krim.
-
 6.	Dari tabel products, harga rokok adalah 18000 dan harga es krim adalah 6500. Jika dijumlahkan, total transaksi penyerang adalah 24500.
- 
+![image](https://github.com/user-attachments/assets/d1696c70-d036-4759-842a-3eff9c946191)

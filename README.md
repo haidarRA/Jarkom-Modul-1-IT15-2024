@@ -173,3 +173,51 @@ Dapat disimpulkan bahwa akun penyerang di-ban pada tanggal 2024-06-09 (format YY
 Di tabel products, terdapat beberapa produk, yaitu rokok, teh botol, telur, es krim, dan permen (urutan ID dari 1 sampai 5). Dan di tabel transaction, penyerang membeli barang dengan ID 1 dan 4 yang artinya penyerang membeli rokok dan es krim.
 6.	Dari tabel products, harga rokok adalah 18000 dan harga es krim adalah 6500. Jika dijumlahkan, total transaksi penyerang adalah 24500.
 ![image](https://github.com/user-attachments/assets/d1696c70-d036-4759-842a-3eff9c946191)
+
+**innerRCE**
+1.	Untuk mencari tahu kapan hacker berhasil mengupload webshell, digunakan filter http.request.method == POST.
+![image](https://github.com/user-attachments/assets/00c5c751-f8ed-4d6f-b637-599b3ccdc999)
+Untuk melihat lebih lanjut detailnya, bisa menggunakan Follow -> HTTP Stream.
+![image](https://github.com/user-attachments/assets/2d4d8014-b3b2-49d6-b176-f5ecde7c99a5)
+Di sini, dapat dilihat bahwa webshell berhasil dikirim pada 2024-09-16 06:18:05 GMT atau 2024-09-16 13:18:05 WIB.
+2.	Untuk mencari endpoint yang rentan, dapat dilihat di gambar sebelumnya. Dari gambar sebelumnya, didapatkan endpoint tersebut adalah /upload.php.
+Sedangkan untuk  server yang rentan, dapat digunakan filter frame contains “server”.
+![image](https://github.com/user-attachments/assets/03fa149f-9371-4796-a82a-cbdf1bad6c00)
+![image](https://github.com/user-attachments/assets/d517b763-8f0e-49f4-a381-91af727a1b0c)
+Di sini, dapat dilihat bahwa server yang rentan adalah server-app.
+Jadi, untuk endpoint dan server yang rentan adalah /upload.php_server-app.
+3.	Untuk mencari nama dari file webshell, dapat digunakan filter http.request.method == POST.
+![image](https://github.com/user-attachments/assets/b6843bb5-d530-4574-860f-ad2460fc9c5e)
+Nama dari webshellnya adalah idzoyyshell.php.
+4.	Untuk mencari command pertama yang dijalankan pada webshell, dapat digunakan filter http.request.method == GET.
+![image](https://github.com/user-attachments/assets/da17c98e-f17e-43d0-b099-504082e9843f)
+Di sini, dapat dilihat bahwa command yang pertama kali dijalankan adalah whoami.
+5.	Dengan menggunakan filter yang sama seperti soal sebelumnya, terdapat sebuah command echo, yaitu %22echo%20cGxzIHJhdGUgc29hbCBpbmkK%20|%20base64%20-d%22 yang jika menggunakan proses URL decode akan didapatkan:
+"echo cGxzIHJhdGUgc29hbCBpbmkK | base64 -d"
+Jika dijalankan di bash:
+![image](https://github.com/user-attachments/assets/9d9db8c4-4dc2-44e9-ab2d-71b764149265)
+Didapatkan string pls rate soal ini.
+![image](https://github.com/user-attachments/assets/8e87ee1b-bab8-4e35-8817-557b8ae4cbe6)
+
+**Adult Hengker**
+1.	Untuk mencari device yang digunakan, dapat melihat secara detail packet dengan frame GET DESCRIPTOR Response CONFIGURATION.
+![image](https://github.com/user-attachments/assets/4cb34423-a615-4a24-97ea-69e8c425d0d3)
+Untuk device yang digunakan adalah Mouse.
+2.	Untuk mencari pesan dari USB HID yang diberikan, yang pertama adalah menggunakan filter usb.src == 1.1.1.
+![image](https://github.com/user-attachments/assets/792ac1db-8f96-4042-938c-f7fefd541f4a)
+Selanjutnya, bisa dipilih detail HID Data pada detail packet dan menggunakan Apply as Column.
+![image](https://github.com/user-attachments/assets/0939ad6d-8655-4693-ba64-f40385ef2ee8)
+Setelah menambahkan HID Data sebagai kolom, dapat diekspor menjadi CSV.
+![image](https://github.com/user-attachments/assets/42459e86-fd21-46f5-a33e-b45ab49fcb70)
+Untuk menyaring data HID, dapat menggunakan command bash cut -d’,’ -f7 adulthengker.csv | tr -d ‘ “ ‘.
+![image](https://github.com/user-attachments/assets/08ad0290-31da-4414-8803-10a5e2fcbd77)
+Setelah mendapatkan semua data HID, dapat diekstrak lagi datanya menggunakan CyberChef.
+![image](https://github.com/user-attachments/assets/78428fe2-7021-4ca5-a6e1-7ccb4bcedf64)
+Untuk hasilnya dapat di-copy ke sebuah program Python untuk menghasilkan gambar dari kumpulan data HID mouse.
+![image](https://github.com/user-attachments/assets/1bec3576-f468-41b5-96c5-6fc6b98db05d)
+Setelah data HID dimasukkan, program Python dapat dijalankan.
+![image](https://github.com/user-attachments/assets/136ab901-875a-4614-bcb0-265cea06d348)
+Setelah dijalankan, akan dihasilkan sebuah gambar.
+![image](https://github.com/user-attachments/assets/04cf9f7c-06d7-4d9d-8103-aaaaac1975da)
+Tulisan yang ada di gambar adalah HALO MAS KEVIN SALKEN.
+![image](https://github.com/user-attachments/assets/3ef527b3-e0fb-42f0-a246-3640d2ea78c3)

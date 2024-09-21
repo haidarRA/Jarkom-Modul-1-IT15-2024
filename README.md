@@ -221,3 +221,6 @@ Setelah dijalankan, akan dihasilkan sebuah gambar.
 ![image](https://github.com/user-attachments/assets/04cf9f7c-06d7-4d9d-8103-aaaaac1975da)
 Tulisan yang ada di gambar adalah HALO MAS KEVIN SALKEN.
 ![image](https://github.com/user-attachments/assets/3ef527b3-e0fb-42f0-a246-3640d2ea78c3)
+
+**LINK VIDEO DEMO REVISI**
+https://youtu.be/dMjiRgat5To
